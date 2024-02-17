@@ -1,0 +1,18 @@
+<section class="clock"
+    *ngFor="let zone of ['', 'UTC', 
+    'America/New_York', 
+    'America/Chicago', 
+    'America/Denver', 
+    'America/Los_Angeles', 
+    'Europe/Paris',
+    'Australia/Sydney',
+    'Asia/Tokyo',
+    'Asia/Bangkok'
+    ]">
+    <h3>{{ zone || 'Local (' + timezone + ')' }}</h3>
+
+
+    <p>Date: {{ timevalueWithTick | dateFormat :zone }}</p>
+    <p>Time: {{ timevalueWithTick | timeFormat :zone }}</p>
+    <p>DateTime: {{ timevalueWithTick | dateTimeFormat :zone }}</p>
+</section>

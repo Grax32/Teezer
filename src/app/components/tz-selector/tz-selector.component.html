@@ -1,0 +1,17 @@
+<select [ngModel]="selectedRegion" (ngModelChange)="updateTimezoneRegion($event)">
+    <option value="">Select Time Zone Region</option>
+    <option *ngFor="let tzRegion of timezoneRegions" [value]="tzRegion">{{tzRegion}}</option>
+</select>
+
+<select [ngModel]="selectedTimezone" (ngModelChange)="updateTimezone($event)">
+    <option>Select Time Zone</option>
+    <option *ngFor="let tz of filteredTimezones" [value]="tz.fullName">{{tz.shortName}}</option>
+</select>
+
+<hr />
+
+<input type="text" [ngModel]="theTime[0]" (ngModelChange)="updateDateTimeValue($event)" />
+
+<app-world-clock></app-world-clock>
+
+ 
